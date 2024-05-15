@@ -25,7 +25,7 @@ const Navbar = () => {
         >
           <img src={k_logo} alt="logo" className="w-12 h-12 object-contain" />
           <p className="text-white text-[1.8rem] font-bold cursor-pointer">
-            Kene <span className="smX:hidden">Agagwu</span>
+            Chisom <span className="smX:hidden">Nwanoruo</span>
           </p>
         </Link>
         <ul className="list-none sm:flex hidden flex-row gap-10">

@@ -2,9 +2,18 @@ import React from "react";
 import { motion } from "framer-motion";
 import { styles } from "../style";
 import { ComputersCanvas } from "./canvas";
+import {
+  FaFacebook,
+  FaTwitter,
+  FaLinkedin,
+  FaGithub,
+  FaInstagram,
+} from "react-icons/fa";
 import { front } from "../assets/index";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
+// import TwitterIcon from "@mui/icons-material/Twitter";
+// import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { Link } from "react-router-dom";
+import { classNames } from "../utils/function";
 
 const handleTwitterClick = () => {
   window.open("https://twitter.com/kay_yung1", "_blank");
@@ -31,7 +40,7 @@ const Hero = () => {
         </div>
         <div>
           <h1 className={`${styles.heroHeadText} text-white mt-0`}>
-            Hi, I'm <span className="text-[#915eff]">Kene</span>
+            Hi, I'm <span className="text-[#915eff]">Chisom</span>
           </h1>
           <p className={`${styles.heroSubText} mt-0 text-white-100`}>
             I'm a fullstack developer and I develop beautiful user interfaces
@@ -39,7 +48,7 @@ const Hero = () => {
           </p>
         </div>
       </div>
-      <div className="text-white text-[rem] w-full md:w-[45%] lg:w-[30%] flex justify-center md:justify-between  gap-6 items-center  flex-col md:flex-row">
+      <div className="text-white text-[rem] w-full md:w-[45%] lg:w-fit flex justify-center md:justify-between  gap-[4rem] items-center  flex-col md:flex-row">
         <div className="w-[8rem] h-[8rem] rounded-full relative overflow-hidden flex items-center justify-center">
           <div className="absolute inset-0 bg-gradient-to-r from-[#FC466B] to-purple-800 rounded-full"></div>
           <div className="relative z-10 bg-gray-700 p-4 text-white text-center h-[7.5rem] w-[7.5rem] rounded-full flex items-center justify-center">
@@ -47,8 +56,7 @@ const Hero = () => {
           </div>
         </div>
         <div className="">
-          <h3 className="font-bold text-2xl text-white">Lets Connect</h3>
-          <div className="flex gap-3 mt-5 items-center justify-center">
+          {/* <div className="flex gap-3 mt-5 items-center justify-center">
             <TwitterIcon
               onClick={handleTwitterClick}
               sx={{
@@ -69,6 +77,52 @@ const Hero = () => {
               className="bg-white w-5 h-5 cursor-pointer"
               onClick={handleAngelistClick}
             />
+          </div> */}
+          <div class=" social-platforms flex flex-col gap-3 mt-5 items-center justify-center">
+            <h3 className="font-bold text-2xl text-white">Lets Connect</h3>
+            <div class=" flex gap-4">
+              {social.map((index, i) => (
+                <button
+                  onClick={index.href}
+                  className="inline-block h-[1.88rem] space-x-4 w-[1.88rem] overflow-hidden my-[0.25rem] bg-white rounded-[3.12rem] relative cursor-pointer 
+                  hover:w-[6.88rem]"
+                >
+                  <div class="absolute top-0 h-[1.88rem] w-[1.88rem] bg-slate-500 rounded-[3.12rem]">
+                    <span className={`flex hover:text-${index.color} items-center justify-center h-full`}>
+                      <index.icon />
+                    </span>
+                  </div>
+                  <span className="text-black left-6 absolute top-[20%] font-medium text-[0.88rem]">
+                    {index.name}
+                  </span>
+                </button>
+              ))}
+
+              {/* <div class="button">
+                <div class="icon">
+                  <i class="fab fa-twitter"></i>
+                </div>
+                <span>Twitter</span>
+              </div>
+              <div class="button">
+                <div class="icon">
+                  <i class="fab fa-instagram"></i>
+                </div>
+                <span>Instagram</span>
+              </div>
+              <div class="button">
+                <div class="icon">
+                  <i class="fab fa-github"></i>
+                </div>
+                <span>Github</span>
+              </div>
+              <div class="button">
+                <div class="icon">
+                  <i class="fab fa-linkedin"></i>
+                </div>
+                <span>LinkedIn</span>
+              </div> */}
+            </div>
           </div>
         </div>
       </div>
@@ -91,5 +145,28 @@ const Hero = () => {
     </section>
   );
 };
+
+const social = [
+  {
+    color: "#4267B2",
+    name: "facebook",
+    href: handleTwitterClick,
+    icon: FaFacebook,
+  },
+  {
+    color: "#1DA1F2",
+    name: "Twitter",
+    href: handleLinkedInClick,
+    icon: FaTwitter,
+  },
+  {
+    color: "#E1306C",
+    name: "Instagram",
+    href: handleMediumClick,
+    icon: FaInstagram,
+  },
+  { color: "#333", name: "Github", href: handleAngelistClick, icon: FaGithub },
+  { color: "#3062c7", name: "LinkedIn", href: "", icon: FaLinkedin },
+];
 
 export default Hero;

@@ -39,12 +39,11 @@ const About = () => {
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
         I'm a skilled fullstack developer with skills and experience in
-        Typescript, Javascript and Ruby, and expertise in frameworks like React,
-        Next.js, Node.js, Nest.js, Three.js, Express, and Rails. Also I'm
-        proficient with SQL and NoSQL databases. I'm a quick learner and I
-        collaborate closely with clients to create efficient, scalable, and
-        user-friendly solutions that solve real-world problems. Lets work
-        together to bring your ideas to life
+        Typescript, Javascript, and expertise in frameworks like React,
+        Next.js, Node.js, Nest.js, Three.js, Express, and Rails. I'm a quick 
+        learner and I collaborate closely with clients to create efficient, 
+        scalable, and user-friendly solutions that solve real-world problems. 
+        Lets work together to bring your ideas to life
       </motion.p>
       <div className="mt-20 flex flex-wrap gap-10 items-center justify-center">
         {services.map((service, index) => (

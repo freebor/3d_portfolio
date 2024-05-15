@@ -37,8 +37,8 @@ import tripguide from "./tripguide.png";
 import openai from "./openai.png";
 import sociopedia from "./sociopedia.png";
 import dashboard from "./dashboard.png";
-import front from "./front.png";
-import teamseas from "./teamseas.png";
+import front from "./fake-front.jpeg";
+import teamseas from "./fake-teamseas.jpeg";
 
 export {
   front,
